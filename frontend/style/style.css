@@ -231,6 +231,10 @@ p {
   display: table-cell;
   position: relative;
   text-align: center;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .header__menu ul > li > a {
@@ -245,10 +249,10 @@ p {
   padding: 0;
   left: 0;
   width: 250px;
-  -webkit-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   z-index: 1;
   display: none;
 }
@@ -258,13 +262,10 @@ p {
   display: block;
   width: 100%;
   padding: 0 15px;
-  overflow: hidden;
-  -webkit-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  transition: all 1s ease;
-  height: 0;
-  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .header__menu li:hover {
@@ -272,12 +273,11 @@ p {
 }
 
 .header__menu li:hover > ul {
-  top: 48px;
+  display: block;
 }
 
-.header__menu li:hover > ul li {
-  opacity: 1;
-  display: block;
+h1 {
+    margin:0;
 }
 
 .category {
@@ -289,15 +289,23 @@ p {
   left: 0;
 }
 
+.category.active{
+}
+
 .category__content ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.category__content ul > li {
+.category__content ul > li a{
   padding: 10px;
   color: #fff;
+  display:block;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .category__content ul > li span {
@@ -375,7 +383,8 @@ p {
 }
 
 .content__wrapper {
-  padding-left: 195px;
-  height: 1000px;
+  margin-left: 195px;
+  height: 500px;
   background: #ccc;
+  padding: 20px;
 }
