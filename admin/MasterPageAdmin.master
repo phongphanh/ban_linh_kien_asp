@@ -14,7 +14,7 @@
             <header id="header">
                 <div class="header__wrap">
                     <div class="logo col">
-                        <a href="#">
+                        <a href="Admin_home.aspx">
                             <span>Admin</span>
                         </a>
                     </div>
@@ -37,7 +37,7 @@
                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="../login.aspx">
                                         <span>
                                             Thoát
                                         </span>

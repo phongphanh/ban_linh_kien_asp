@@ -204,3 +204,10 @@ footer {
     padding: 15px;
     border-top: 1px solid #d2d6de;
 }
+
+/*butotn*/
+.button {
+    margin: 0 10px;
+    text-decoration: underline;
+    color: #1899ED;
+}
