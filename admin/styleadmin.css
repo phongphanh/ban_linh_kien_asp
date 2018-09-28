@@ -62,7 +62,7 @@ p {
 .disable {
     display: none;
 }
-.visible {
+.avatar--wrap.visible .drop-down {
     display: block;
 }
 /**/
@@ -83,6 +83,8 @@ p {
     background: #367fa9;
     color: #fff;
     font-size:28px;
+    cursor: pointer;
+    font-weight: 700;
 }
 .username {
     position: relative;
@@ -104,7 +106,13 @@ p {
     box-sizing: border-box;
     cursor:pointer;
     color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+    .avatar--wrap:hover {
+        background: #1899ed;
+    }
 .avatar {
     position: relative;
     display: inline-block;
@@ -115,14 +123,12 @@ p {
         border-radius: 50%;
         padding: 5px;
         width: 60%;
+        background: #fff;
     }
     .name-user {
         margin-left: 15px;
     }
 ul.drop-down {
-    position: absolute;
-    right: 0;
-    top: 50px;
     background: #1a2226;
     width: 200px;
     text-align: left;
@@ -169,23 +175,25 @@ ul.drop-down {
     width: 15%;
     left: 0;
     top: 50px;
-    background: #1a2226;
-    color:#b8c7ce;
+    background: #3a4651;
+    color:#aaafb4;
     height: 100%;
 }
     .sidebar__menu h3 {
         padding: 0 15px;
-        color: #4b646f;
+        color: #fff;
+        cursor: default;
      }
     .sidebar__menu ul li {
         display:block;
         height: 50px;
         
         cursor: pointer;
-        text-transform: uppercase;
+        text-transform: capitalize;
     }
         .sidebar__menu ul li:hover {
-            background: #1e282c;
+            background: #3c8dbc;
+            color: #fff;
         }
     .sidebar__menu ul li span {
         line-height: 50px;
@@ -203,7 +211,11 @@ footer {
     margin-left: 15%;
     padding: 15px;
     border-top: 1px solid #d2d6de;
+    cursor: default;
 }
+    footer h3 {
+        margin: 0;
+    }
 
 /*butotn*/
 .button {

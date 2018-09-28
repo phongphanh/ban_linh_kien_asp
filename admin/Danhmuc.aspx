@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/admin/MasterPageAdmin.master" AutoEventWireup="false" CodeFile="Danhmuc.aspx.vb" Inherits="ban_linh_kien_asp_admin_Danhmuc" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="MasterPageAdmin.master" AutoEventWireup="false" CodeFile="Danhmuc.aspx.vb" Inherits="ban_linh_kien_asp_admin_Danhmuc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h2>Danh mục</h2>
