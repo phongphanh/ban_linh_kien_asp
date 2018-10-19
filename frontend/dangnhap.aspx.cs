@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class led_one_led : System.Web.UI.Page
+public partial class frontend_danhnhap : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
