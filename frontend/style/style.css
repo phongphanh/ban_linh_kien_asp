@@ -388,3 +388,7 @@ h1 {
   background: #ccc;
   padding: 20px;
 }
+
+.category__content li.active {
+    background-color: #22b7ff;
+}
