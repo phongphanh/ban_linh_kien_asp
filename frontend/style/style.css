@@ -386,6 +386,7 @@ h1 {
   margin-left: 195px;
   background: #ccc;
   padding: 20px;
+  min-height: 500px;
 }
 
 .category__content li.active {
