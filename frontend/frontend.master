@@ -78,20 +78,34 @@
             <div class="content">
               <aside class="category active" id="category">
                 <div class="category__content">
-                  <ul>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon1.png" alt=""/><span>Vi điều khiển - Nhúng</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon2.png" alt=""/><span>Mạch điện tử</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon3.png" alt=""/><span>Linh kiện điện tử</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon4.png" alt=""/><span>Module - Cảm biến</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon5.png" alt=""/><span>Phụ kiện điện tử</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon6.png" alt=""/><span>IC - chức năng</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon7.png" alt=""/><span>Robot - Pin</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon8.png" alt=""/><span>Led - Oneled</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon9.png" alt=""/><span>Smart home</span></a></li>
-                    <li><a href="mathang.aspx"><img class="icon--sitebar" src="images/icon10.png" alt=""/><span>3D Printer & CNC</span></a></li>
-                  </ul>
+                    <asp:SqlDataSource ID="sql2" runat="server" ConnectionString="<%$ ConnectionStrings:ThietBiDienTuConnectionString4 %>" SelectCommand="SELECT * FROM [DANHMUC]"></asp:SqlDataSource>
+                    <%--<asp:DataList ID="DataList1" runat="server" DataKeyField="MaDm" DataSourceID="sql2">
+                        <ItemTemplate>
+                            MaDm:
+                            <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>'/>
+                            <br />
+                            TenDm:
+                            <asp:Label ID="TenDmLabel" runat="server" Text='<%# Eval("TenDm") %>' />
+                            <br />
+                            HinhAnh:
+                            <asp:Label ID="HinhAnhLabel" runat="server" Text='<%# Eval("HinhAnh") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>--%>
+                    <asp:DataList ID="DataList2" runat="server" DataKeyField="MaDm" DataSourceID="sql2">
+                        <ItemTemplate>
+                            <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>' Visible="false"/>
+                            <a href="mathang.aspx">
+                                <asp:Image ID="img" CssClass="icon--sitebar" runat="server" ImageUrl='<%# Eval("HinhAnh") %>'/>
+                                <asp:Label ID="TenDmLabel" runat="server" Text='<%# Eval("TenDm") %>' />
+                            </a>
+                        </ItemTemplate>
+                    </asp:DataList>
                 </div>
+                    
               </aside>
+                
               <div class="content__wrapper">
                   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
