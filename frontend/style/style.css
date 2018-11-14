@@ -1,4 +1,4 @@
-/* ==============================================================
+    /* ==============================================================
 
 Project:	xxx - Creative Coming Soon Template
 Info:		https://themeforest.net/item/xxx
@@ -389,7 +389,7 @@ h1 {
 
 .content__wrapper {
   margin-left: 195px;
-  background: #ccc;
+  /*background: #ccc;*/
   padding: 20px;
   min-height: 500px;
 }
@@ -411,7 +411,7 @@ h1 {
 }
 
 .content__view .item{
-    border: 1px solid transparent;
+    border: 1px solid #ccc;
     margin: 5px;
     border-radius: 5px;
     transition: all 0.5s ease;
@@ -484,3 +484,86 @@ h1 {
 .content__view .btn-primary:hover{
     background-color: #ea723d;
 }
+/*detail*/
+.content-detail {
+    width : 100%;
+}
+.content-detail th,.content-detail td {
+    width : 100%;
+}
+.item-information, .item-img {
+    width: 50%;
+}
+.item-detail {
+    width: 100%;
+}
+.item-information .name {
+    line-height: 30px;
+    height: 30px;
+    vertical-align: middle;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 0;
+}
+.item-information .price {
+    padding: 10px 25px;
+    background: #f0562d;
+    margin: 10px 0;
+}
+.item-information .price-item {
+    font-weight: 700;
+    color: #fff;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 25px;
+}
+.item-method h3 {
+    margin: 0;
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid #999;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.item-method__wrap {
+    padding: 0 10px;
+    margin-top: 30px;
+}
+    .item-method__wrap .name {
+        text-align: center;
+        display: inherit;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 50px;
+        height: 50px;
+        vertical-align: middle;
+        color: red;
+    }
+.item-method__wrap .text-highlight{
+    background: #009bdd;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    padding: 0 15px;
+    vertical-align: middle;
+    width: 200px;
+    display: inherit;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+    .item-method__wrap p {
+        margin-bottom: 25px;
+    }
+    .item-method__wrap span {
+        line-height: 30px;
+        vertical-align: middle;
+        font-size: 18px;
+    }

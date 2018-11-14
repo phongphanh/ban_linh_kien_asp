@@ -3,12 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form id="form3" runat="server">
         <h1>Đây là trang chủ</h1>
-            <asp:SqlDataSource ID="sqlMH" runat="server" ConnectionString="<%$ ConnectionStrings:thietbiData %>" SelectCommand="SELECT [HinhAnh], [DonGia], [TenMh], [MaMh] FROM [MATHANG]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="sqlMH" runat="server" ConnectionString="<%$ ConnectionStrings:ThietBiDienTu %>" SelectCommand="SELECT [HinhAnh], [DonGia], [TenMh], [MaMh] FROM [MATHANG]" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
         <br />
         <asp:DataList ID="DataList1" runat="server" DataSourceID="sqlMH" RepeatColumns="4" CssClass="content__view" OnItemCommand="DataList1_ItemCommand" DataKeyField="MaMh">
             
             <%--<ItemTemplate>
-                HinhAnh:
+             0   HinhAnh:
                 <asp:Label ID="HinhAnhLabel" runat="server" Text='<%# Eval("HinhAnh") %>' />
                 <br />
                 DonGia:
@@ -31,9 +31,9 @@
                         <p><asp:Label ID="DonGiaLabel" runat="server" Text='<%# Eval("DonGia") %>' CssClass="price"/></p>
                         <p><asp:Label ID="TenMhLabel" runat="server" Text='<%# Eval("TenMh") %>' CssClass="name"/></p>
                         <p>
-                            <asp:HyperLink ID="viewChiTiet" runat="server" CssClass="btn btn-primary" NavigateUrl='<%# ("chitietsanpham.aspx?MaMh=") + Eval("MaMh") %>'>
-                                <span>Xem chi tiết</span>
-                            </asp:HyperLink>
+                            <asp:hyperlink id="viewchitiet" runat="server" cssclass="btn btn-primary" navigateurl='<%# ("chitietsanpham.aspx?MaMh=") + Eval("MaMh") %>'>
+                                <span>xem chi tiết</span>
+                            </asp:hyperlink>
                             <button class="btn btn-primary">
                                 <span>Thêm vào giỏ</span>
                             </button>

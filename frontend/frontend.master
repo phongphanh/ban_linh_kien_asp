@@ -78,7 +78,7 @@
             <div class="content">
               <aside class="category active" id="category">
                 <div class="category__content">
-                    <asp:SqlDataSource ID="sql2" runat="server" ConnectionString="<%$ ConnectionStrings:ThietBiDienTuConnectionString4 %>" SelectCommand="SELECT * FROM [DANHMUC]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="sql2" runat="server" ConnectionString="<%$ ConnectionStrings:ThietBiDienTu5ConnectionString2 %>" SelectCommand="SELECT * FROM [DANHMUC]"></asp:SqlDataSource>
                     <%--<asp:DataList ID="DataList1" runat="server" DataKeyField="MaDm" DataSourceID="sql2">
                         <ItemTemplate>
                             MaDm:
@@ -94,19 +94,23 @@
                         </ItemTemplate>
                     </asp:DataList>--%>
                     <asp:DataList ID="DataList2" runat="server" DataKeyField="MaDm" DataSourceID="sql2">
-                        <ItemTemplate>
+                        <%--<ItemTemplate>
                             <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>' Visible="false"/>
                             <a href="mathang.aspx">
                                 <asp:Image ID="img" CssClass="icon--sitebar" runat="server" ImageUrl='<%# Eval("HinhAnh") %>'/>
                                 <asp:Label ID="TenDmLabel" runat="server" Text='<%# Eval("TenDm") %>' />
                             </a>
-                        </ItemTemplate>
-                    </asp:DataList>
-                </div>
-                    
-              </aside>
-                
-              <div class="content__wrapper">
+                        </ItemTemplate>--%>
+                        <ItemTemplate>
+                            <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>' Visible="false"/>
+                            <%--<a href="mathang.aspx">
+                                <asp:Image ID="img" CssClass="icon--sitebar" runat="server" ImageUrl='<%# Eval("HinhAnh") %>'/>
+                                <asp:Label ID="TenDmLabel" runat="server" Text='<%# Eval("TenDm") %>' />
+                            </a>--%>
+                            <asp:hyperlink id="viewmathang" runat="server" navigateurl='<%# ("mathang.aspx?MaDm=") + Eval("MaDm") %>'>
+                                <asp:Image ID="Image1" CssClass="icon--sitebar" runat="server" ImageUrl='<%# Eval("HinhAnh") %>'/>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("TenDm") %>' />
+                            </asp:hyperlink></ItemTemplate></asp:DataList></div></aside><div class="content__wrapper">
                   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
                   </asp:ContentPlaceHolder>
@@ -119,26 +123,13 @@
                 <div class="col col-25">
                   <div class="footer__top--links">
                     <ul class="list-inline">
-                      <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
-                      <li><a href="#"><img src="images/google.png" alt=""/></a></li>
-                      <li><a href="#"><img src="images/youtube.png" alt=""/></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col col-75">
+                      <li><a href="#"><img src="images/facebook.png" alt=""/></a></li><li><a href="#"><img src="images/google.png" alt=""/></a></li><li><a href="#"><img src="images/youtube.png" alt=""/></a></li></ul></div></div><div class="col col-75">
                   <div class="footer__top--recieve">
                     <div class="col col-50">
-                      <div class="footer__top--text"><img src="images/letter.png" alt=""/><span>đăng kí nhận thông tin sản phẩm</span></div>
-                    </div>
-                    <div class="col col-50">
+                      <div class="footer__top--text"><img src="images/letter.png" alt=""/><span>đăng kí nhận thông tin sản phẩm</span></div></div><div class="col col-50">
                       <div class="footer__top--form text-right">
                         <form id="form2">
-                          <input type="email" placeholder="Email Address *"/>
-                          <input type="submit" value="Đăng Ký"/>
-                        </form>
-                      </div>
-                    </div>
-                    <div class="clear-fix"></div>
+                          <input type="email" placeholder="Email Address *"/> <input type="submit" value="Đăng Ký"/> </form></div></div><div class="clear-fix"></div>
                   </div>
                 </div>
                 <div class="clear-fix"></div>
@@ -147,16 +138,4 @@
             <div class="container">
               <div class="footer__bottom">
                 <div class="footer__bottom--infor">
-                  <p>Công Ty TNHH Thiết Bị Và Công Nghệ Minh Hà</p>
-                  <p>Trụ sở: Đại Vĩ - Liên Hà - Đông Anh - Hà Nội</p>
-                  <p>GPĐKKD Số: 01.05.165.062 Do Sở KH VÀ ĐT TP.HN cấp ngày: 28.02.2011</p>
-                </div>
-                <div class="footer__bottom--register"><img src="images/thongbaobct.png" alt=""/></div>
-              </div>
-            </div>
-          </footer>
-        </div>
-    </div>
-    <script src="jquery.min.js"></script>
-</body>
-</html>
+                  <p>Công Ty TNHH Thiết Bị Và Công Nghệ Minh Hà</p><p>Trụ sở: Đại Vĩ - Liên Hà - Đông Anh - Hà Nội</p><p>GPĐKKD Số: 01.05.165.062 Do Sở KH VÀ ĐT TP.HN cấp ngày: 28.02.2011</p></div><div class="footer__bottom--register"><img src="images/thongbaobct.png" alt=""/></div></div></div></footer></div></div><script src="jquery.min.js"></script></body></html>
