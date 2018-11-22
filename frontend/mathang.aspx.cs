@@ -11,4 +11,15 @@ public partial class frontend_danhmuc : System.Web.UI.Page
     {
 
     }
+    protected void DataList3_ItemCommand(object source, DataListCommandEventArgs e)
+    {
+        if (e.CommandName == "item")
+        {
+            Response.Redirect("chitietsanpham.aspx?MaMh=" + Eval("MaMh"));
+           
+        }
+        else { 
+            
+        }
+    }
 }
