@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="frontend.master.cs" Inherits="frontend" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Bán link kiện điện tử HAUI</title>
+    <link href="style/style.css" rel="stylesheet" />
+    <link href="style/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <form id="form3" runat="server">
+    
+    <div>
+        <div id="wrapper">
+          <header class="header" id="header">
+            <div class="header__top">
+              <div class="container">
+                <div class="col col-50">
+                  <div class="phone"><span class="buy-online">Mua hàng online: 1900.03.44</span><span class="hot">Than phiền: 01684.083.084</span></div>
+                </div>
+                <div class="col col-50">
+                  <div class="header__content--contact text-right">
+                    <ul class="list-inline">
+                        <li>
+                            <%--<asp:Label ID="notLogin" runat="server" Text="">--%>
+                                <asp:LinkButton PostBackUrl="~/frontend/dangnhap.aspx" CausesValidation="false" ID="notLogin" runat="server" Font-Underline="False">Đăng nhập</asp:LinkButton>
+                            <%--</asp:Label>--%>
+                        <asp:Label ID="logIn" Visible="false" runat="server">
+                            <asp:Label ID="Label1" runat="server" Text="Tài khoản: "></asp:Label> <asp:Label ID="lblusername" runat="server" Text="Label"></asp:Label>
+                        </asp:Label>
+                      </li>
+                      <li>
+                       <asp:Label ID="notLogin1" runat="server" Text="">
+                             <asp:LinkButton PostBackUrl="~/frontend/dang_ky.aspx" CausesValidation="false" ID="LinkButton2" runat="server" Font-Underline="False">Đăng ký</asp:LinkButton>
+                         </asp:Label>
+                          <%--<asp:Label ID="logIn1" Visible="false" runat="server">--%><%--<asp:LinkButton ID="LinkButton3" runat="server" Font-Underline="True" PostBackUrl="~/frontend/Dangxuat.aspx">Đăng xuất</asp:LinkButton>--%>
+                            <asp:Button ID="btnLogOut" runat="server" Text="Đăng xuất" BackColor="#0099FF" Font-Bold="False" Font-Size="Medium" Font-Underline="True" ForeColor="White" Height="32px" OnClick="btnLogOut_Click" Visible="False" Width="94px" BorderColor="#0099FF" BorderWidth="0px" />
+                          <%--</asp:Label>--%>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear-fix"></div>
+              </div>
+            </div>
+            <div class="header__mid">
+              <div class="container">
+                <div class="col col-16">
+                  <div class="header__logo text-center"><a href="home.aspx"><img src="images/logo.png" alt="logo"/></a></div>
+                </div>
+                <div class="col col-66">
+                  <div class="header__search">
+                        <div class="form">
+                            <input type="search" placeholder="Tìm kiếm ..."/>
+                            <button><img class="icon2" src="images/search.png" alt=""/></button>
+                        </div>
+                  </div>
+                </div>
+                <div class="col col-16">
+                  <div class="header__cart">
+                      <a class="text-center cart" href="gio_hang.aspx">
+                          <img class="icon2" src="images/cart.png" alt=""/>
+                          <span>Giỏ hàng: 
+                        <asp:Label ID="lblNumberCart" runat="server"></asp:Label>
+&nbsp;(SP)</span></a>
+                  </div>
+                </div>
+                <div class="clear-fix"></div>
+              </div>
+            </div>
+            <div class="header__bottom">
+              <div class="container">
+                <div class="col col-16">
+                  <div class="header__category  text-center">
+                    <p>danh mục</p>
+                  </div>
+                </div>
+                <div class="col col-83">
+                  <div class="header__menu">
+                    <ul class="list-inline">
+                      <li><a href="home.aspx">Trang chủ</a></li>
+                      <li><a href="#">hướng dẫn</a>
+                        <ul>
+                          <li><a href="video_huong_dan.aspx">video hướng dẫn mua hàng</a></li>
+                          <li><a href="huong_dan_dat_mua_linh_kien.aspx">hướng dẫn đặt mua linh kiện</a></li>
+                          <li><a href="tra_cuu_ma_van_don.aspx">tra cứu mã vận đơn</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="gioi_thieu.aspx">giới thiệu</a></li>
+                      <li><a href="trung_tam_bao_hanh.aspx">Trung tâm bảo hành</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear-fix"></div>
+              </div>
+            </div>
+          </header>
+          <div class="container">
+            <div class="content">
+              <aside class="category active" id="category">
+                <div class="category__content">
+                    <asp:SqlDataSource ID="sql2" runat="server" ConnectionString="<%$ ConnectionStrings:ThietBiDienTu %>" SelectCommand="SELECT * FROM [DANHMUC]"></asp:SqlDataSource>
+                    <%--<asp:DataList ID="DataList1" runat="server" DataKeyField="MaDm" DataSourceID="sql2">
+                        <ItemTemplate>
+                            MaDm:
+                            <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>'/>
+                            <br />
+                            TenDm:
+                            <asp:Label ID="TenDmLabel" runat="server" Text='<%# Eval("TenDm") %>' />
+                            <br />
+                            HinhAnh:
+                            <asp:Label ID="HinhAnhLabel" runat="server" Text='<%# Eval("HinhAnh") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>--%>
+                    <asp:DataList ID="DataList2" runat="server" DataKeyField="MaDm" DataSourceID="sql2" CssClass="category">
+                        <%--<ItemTemplate>
+                            <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>' Visible="false"/>
+                            <a href="mathang.aspx">
+                                <asp:Image ID="img" CssClass="icon--sitebar" runat="server" ImageUrl='<%# Eval("HinhAnh") %>'/>
+                                <asp:Label ID="TenDmLabel" runat="server" Text='<%# Eval("TenDm") %>' />
+                            </a>
+                        </ItemTemplate>--%>
+                        <ItemTemplate>
+                            <asp:Label ID="MaDmLabel" runat="server" Text='<%# Eval("MaDm") %>' Visible="False"/>
+                            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="icon--sitebar" ImageUrl='<%# Eval("HinhAnh", "{0}") %>' NavigateUrl='<%# Eval("MaDm", "sanpham.aspx?MaDm={0}") %>'>HyperLink</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" runat="server" CssClass="text--sitebar" Text='<%# Eval("TenDm") %>' NavigateUrl='<%# Eval("MaDm", "sanpham.aspx?MaDm={0}") %>'></asp:HyperLink>
+                        </ItemTemplate>
+                    </asp:DataList>
+
+                </div>
+
+              </aside>
+                <div class="content__wrapper">
+                  <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                  </asp:ContentPlaceHolder>
+              </div>
+            </div>
+          </div>
+          <footer class="footer" id="footer">
+            <div class="footer__top">
+              <div class="container">
+                <div class="col col-25">
+                  <div class="footer__top--links">
+                    <ul class="list-inline">
+                      <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
+                      <li><a href="#"><img src="images/google.png" alt=""/></a></li>
+                      <li><a href="#"><img src="images/youtube.png" alt=""/></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col col-75">
+                  <div class="footer__top--recieve">
+                    <div class="col col-50">
+                      <div class="footer__top--text"><img src="images/letter.png" alt=""/><span>đăng kí nhận thông tin sản phẩm</span></div>
+                    </div>
+                    <div class="col col-50">
+                      <div class="footer__top--form text-right">
+                        <form id="form2">
+                          <input type="email" placeholder="Email Address *"/>
+                          <input type="submit" value="Đăng Ký"/>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="clear-fix"></div>
+                  </div>
+                </div>
+                <div class="clear-fix"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="footer__bottom">
+                <div class="footer__bottom--infor">
+                  <p>Công Ty TNHH Thiết Bị Và Công Nghệ Minh Hà</p>
+                  <p>Trụ sở: Đại Vĩ - Liên Hà - Đông Anh - Hà Nội</p>
+                  <p>GPĐKKD Số: 01.05.165.062 Do Sở KH VÀ ĐT TP.HN cấp ngày: 28.02.2011</p>
+                </div>
+                <div class="footer__bottom--register"><img src="images/thongbaobct.png" alt=""/></div>
+              </div>
+            </div>
+          </footer>
+            </div>
+        </div>
+    </form>
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+</body></html>
